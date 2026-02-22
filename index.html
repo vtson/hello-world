@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Management System</title>
+    <!-- Stylesheet: loaded from src/ directory, Vite resolves this during dev and build -->
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>License Data Viewer</h2>
+
+        <!-- Search & Sort Controls -->
+        <div class="controls">
+            <!-- Search: choose which column to search in, then type a query -->
+            <div class="group">
+                <label>Search in:</label>
+                <select id="searchColumn">
+                    <option value="all">All Columns</option>
+                    <option value="License No">License No</option>
+                    <option value="Name">Name</option>
+                    <option value="Company">Company</option>
+                    <option value="City">City</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Type to search...">
+            </div>
+
+            <!-- Sort: choose a column and direction (ascending/descending) -->
+            <div class="group">
+                <label>Sort by:</label>
+                <select id="sortColumn">
+                    <option value="Name">Name</option>
+                    <option value="Expiration Date">Expiration Date</option>
+                    <option value="License No">License No</option>
+                </select>
+                <select id="sortOrder">
+                    <option value="asc">A - Z (Asc)</option>
+                    <option value="desc">Z - A (Desc)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Record count display -->
+        <div id="stats">Total: 0 records</div>
+
+        <!-- Data Table: headers and body are populated dynamically by main.ts -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr id="headerRow">
+                        <!-- Column headers are generated from JSON data keys -->
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Table rows are rendered by the updateTable() function -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prevBtn">Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <!-- Main application script (TypeScript, processed by Vite) -->
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
