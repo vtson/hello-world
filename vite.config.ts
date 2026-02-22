@@ -9,7 +9,7 @@ export default defineConfig({
   // Use '/' for local development.
   // Change to '/your-repo-name/' when deploying to GitHub Pages.
   // Example: base: '/license-data-viewer/'
-  base: '/',
+  base: '/hello-world/',
 
   // Build output settings
   build: {
